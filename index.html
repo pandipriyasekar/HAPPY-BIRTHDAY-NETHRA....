@@ -261,7 +261,11 @@ function check(){
 let pass = document.getElementById("password").value.toLowerCase();
 
 if(pass=="leaf"){
-    window.location.href="letter.html";
+
+    document.getElementById("giftBox").style.display="none";
+    document.getElementById("passwordPage").style.display="none";
+    document.getElementById("letterPage").style.display="block";
+
 }
 else{
 
