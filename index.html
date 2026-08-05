@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Dear Nethra ❤️</title>
+
+<style>
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+padding:20px;
+max-width:1000px;
+margin:auto;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:18px;
+box-shadow:0 6px 15px rgba(255,255,255,.4);
+transition:0.4s;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+box-shadow:0 10px 25px rgba(255,255,255,.8);
+}
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(to bottom,#ffb6d9,#ff69b4);
+overflow:hidden;
+text-align:center;
+color:white;
+}
+
+.container{
+margin-top:120px;
+}
+
+button{
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:15px;
+}
+
+#yes{
+background:white;
+color:#ff1493;
+}
+
+#no{
+background:white;
+color:red;
+position:relative;
+}
+
+.heart{
+position:absolute;
+font-size:30px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="page1">
+
+<h1>🎂 Happy Birthday My Dear Nethra ❤️</h1>
+
+<p>Today is your special day 💖</p>
+
+<button onclick="nextPage()">
+Start Surprise 🎁
+</button>
+
+</div>
+
+<div class="container" id="page2" style="display:none;">
+
+<h1>😊 Do you like me?</h1>
+
+<button id="yes" onclick="yesClick()">
+Yes ❤️
+</button>
+
+<button id="no">
+No 💔
+</button>
+
+</div>
+<div class="container" id="page3" style="display:none;">
+
+<h1>💌 What do you want from me?</h1>
+
+<button onclick="nextGift()">
+❤️ I will always be with you
+</button>
+
+<br><br>
+
+<button onclick="nextGift()">
+🤝 Whatever happens, don't leave me
+</button>
+
+</div>
+<div class="container" id="giftPage" style="display:none;">
+
+<h1>🎁 Do you want a Birthday Gift?</h1>
+
+<button onclick="showGift()">Yes 🎁</button>
+
+<button onclick="noGift()">No 🙈</button>
+
+</div>
+
+<div class="container" id="giftBox" style="display:none;">
+
+<h1>🎁 Choose Your Gift 🎁</h1>
+
+<button onclick="gift1()">🎁 Gift 1</button>
+
+<button onclick="gift2()">🎁 Gift 2</button>
+
+<button onclick="gift3()">🎁 Gift 3</button>
+
+<button onclick="gift4()">🎁 Gift 4</button>
+
+<button onclick="gift5()">🎁 Gift 5</button>
+
+</div>
+<!-- Memory Gallery -->
+<div class="container" id="galleryPage" style="display:none;">
+
+<h1>📸 Our Beautiful Memories ❤️</h1>
+
+<p>
+Every picture tells a story, and every story reminds me how lucky I am to know you.
+Thank you for filling my life with wonderful memories. 💖
+</p>
+
+<div class="gallery">
+
+<img src="images/photo1.jpeg" alt="Memory 1">
+<img src="images/photo2.jpeg" alt="Memory 2">
+<img src="images/photo3.jpeg" alt="Memory 3">
+<img src="images/photo4.jpeg" alt="Memory 4">
+<img src="images/photo5.jpeg" alt="Memory 5">
+<img src="images/photo6.jpeg" alt="Memory 6">
+<img src="images/photo7.jpeg" alt="Memory 7">
+<img src="images/photo8.jpeg" alt="Memory 8">
+<img src="images/photo11.jpeg" alt="Memory 11">
+<img src="images/photo10.jpeg" alt="Memory 10">
+
+
+</div>
+<br>
+
+<button type="button" onclick="showLetter()">
+Next ❤️
+</button>
+</div>
+<!-- Birthday Letter -->
+<div class="container" id="letterPage" style="display:none;">
+
+<h1>💌 A Letter From My Heart</h1>
+
+<div style="background:white;color:#ff1493;padding:25px;border-radius:20px;width:80%;margin:auto;line-height:1.8;font-size:20px;">
+
+<p>
+
+🎂 <b>Happy 23rd Birthday, My Dear Nethra ❤️</b>
+
+<br><br>
+
+There are some people who come into our lives at exactly the right time, and you are one of them.
+
+Thank you for never judging me.
+
+You listened to me when I was at my lowest and always made me feel understood.
+
+You have played an important role in my life, and I'm truly grateful for your kindness and care.
+
+On your special day, I wish you endless happiness, good health, success, peace, and all the love you deserve.
+
+Keep smiling because your smile brightens everyone's day.
+
+I miss you, chellam. ❤️
+
+May all your dreams come true.
+
+Happy Birthday once again! 🎉🎂
+
+With lots of love,
+❤️ Your Friend
+
+</p>
+
+</div>
+
+<br>
+
+<button onclick="finalPage()">
+Final Surprise 🎆
+</button>
+
+</div>
+<script>
+let current = 0;
+let timer = null;
+
+function nextPage(){
+
+document.getElementById("page1").style.display="none";
+document.getElementById("page2").style.display="block";
+
+}
+
+function yesClick(){
+
+document.getElementById("page2").style.display="none";
+document.getElementById("page3").style.display="block";
+
+}
+
+function nextGift(){
+
+document.getElementById("page3").style.display="none";
+document.getElementById("giftPage").style.display="block";
+
+}
+
+function showGift(){
+
+document.getElementById("giftPage").style.display="none";
+document.getElementById("giftBox").style.display="block";
+
+}
+
+function noGift(){
+
+alert("😄 Not allowed dear! Everyone deserves a birthday gift ❤️");
+
+}
+
+
+function openNote(title,message){
+
+document.getElementById("noteTitle").innerHTML=title;
+document.getElementById("noteText").innerHTML=message;
+document.getElementById("note").style.display="block";
+
+}
+
+
+function closeNote(){
+
+document.getElementById("note").style.display="none";
+
+}
+
+
+function gift1(){
+
+openNote(
+"🎁 Gift 1",
+"🌸 <b>Believe in yourself.</b><br><br>You are stronger than you think. Keep believing in yourself ❤️"
+);
+
+}
+
+function gift2(){
+
+openNote(
+"🎁 Gift 2",
+"😊 <b>Your smile is beautiful.</b><br><br>Never stop smiling ❤️"
+);
+
+}
+
+
+function gift3(){
+
+openNote(
+"🎁 Gift 3",
+"🌈 <b>Dream Big.</b><br><br>You deserve success and happiness ❤️"
+);
+
+}
+
+
+function gift4(){
+
+openNote(
+"🎁 Gift 4",
+"💖 <b>Stay Kind.</b><br><br>Your kindness makes you special ❤️"
+);
+
+}
+
+
+function gift5(){
+
+openNote(
+"🎁 Final Gift ❤️",
+"🎂 Happy Birthday My Dear Nethra ❤️<br><br>Always stay happy and keep smiling 💖"
+);
+
+}
+
+
+// Continue button from popup
+function startMemories(){
+
+document.getElementById("note").style.display="none";
+
+document.getElementById("giftBox").style.display="none";
+
+document.getElementById("galleryPage").style.display="block";
+
+}
+
+
+// Letter page
+
+function showLetter(){
+
+    document.getElementById("galleryPage").style.display="none";
+
+    document.getElementById("letterPage").style.display="block";
+
+}
+
+// No button running away
+const no=document.getElementById("no");
+
+
+no.onmouseover=function(){
+
+this.style.position="absolute";
+
+this.style.left=Math.random()*80+"%";
+
+this.style.top=Math.random()*80+"%";
+
+}
+
+
+// Floating hearts
+
+for(let i=0;i<20;i++){
+
+let h=document.createElement("div");
+
+h.innerHTML="❤️";
+
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(h);
+
+}
+function finalPage(){
+
+document.getElementById("letterPage").style.display="none";
+
+document.body.innerHTML += `
+<div class="container" style="display:block;">
+
+<h1>🎆 Happy Birthday Nethra ❤️</h1>
+
+<p style="font-size:25px;">
+Thank you for being a beautiful part of my life 💖
+<br><br>
+May your future be filled with happiness, success and endless smiles 🌸
+<br><br>
+Always stay happy ❤️
+</p>
+
+<h1>🎂❤️🎁</h1>
+
+</div>
+`;
+
+}
+
+</script>
+<!-- Gift Letter Popup -->
+<div id="note" style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:420px;
+max-width:90%;
+background:#fff8c6;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,0,0,.4);
+z-index:9999;
+color:#444;
+font-family:Georgia,serif;
+text-align:left;">
+
+<h2 id="noteTitle" style="text-align:center;color:#ff1493;"></h2>
+
+<p id="noteText" style="font-size:18px;line-height:1.8;"></p>
+
+<center>
+<button onclick="startMemories()">Continue ❤️</button>
+</center>
+</div>
+</body>
+</html>
