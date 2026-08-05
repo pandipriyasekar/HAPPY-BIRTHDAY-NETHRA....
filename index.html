@@ -234,6 +234,38 @@ Final Surprise 🎆
 <script>
 let current = 0;
 let timer = null;
+let count = 0;
+
+function check(){
+
+let pass = document.getElementById("password").value.toLowerCase();
+
+if(pass=="leaf"){
+    window.location.href="letter.html";
+}
+else{
+
+count++;
+
+if(count==1){
+    document.getElementById("hint").innerHTML =
+    "Hint 1: It comes from nature";
+}
+
+else if(count==2){
+    document.getElementById("hint").innerHTML =
+    "Hint 2: It is connected with love";
+}
+
+else if(count==3){
+    document.getElementById("hint").innerHTML =
+    "Hint 3: It is something you can hold";
+}
+
+}
+
+}
+
 
 function nextPage(){
 
